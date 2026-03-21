@@ -1,0 +1,12 @@
+resources:
+  jobs:
+    job01swap01:
+      name: job01swap01
+      tasks:
+        - task_key: bronzelayer
+          notebook_task:
+            notebook_path: ../../src/swap01/orders_Bronze_sw01
+            source: WORKSPACE
+      queue:
+        enabled: true
+      performance_target: PERFORMANCE_OPTIMIZED

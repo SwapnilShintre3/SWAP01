@@ -1,0 +1,20 @@
+# The main pipeline for swap01
+
+resources:
+  pipelines:
+    swap01_etl:
+      name: swap01_etl
+      catalog: ${var.catalog}
+      schema: ${var.schema}
+      serverless: true
+      root_path: "../src/swap01_etl"
+
+      libraries:
+        - glob:
+            include: ../src/swap01_etl/transformations/**
+
+      environment:
+        dependencies:
+          # We include every dependency defined by pyproject.toml by defining an editable environment
+          # that points to the folder where pyproject.toml is deployed.
+          - --editable ${workspace.file_path}
