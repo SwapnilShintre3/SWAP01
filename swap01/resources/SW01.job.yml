@@ -10,7 +10,7 @@ resources:
       tasks:
         - task_key: bronzelayer
           notebook_task:
-            notebook_path: ../../src/swap01/orders_Bronze_sw01
+            notebook_path: ../src/SWjob01/orders_Bronze_sw01.ipynb
             source: WORKSPACE
       queue:
         enabled: true
